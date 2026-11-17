@@ -25,7 +25,9 @@ Supported packages:
 
 ## Windows
 
-Download `ECNLSolver-Portable-x86_64.exe` from the latest release. It is a single portable executable and does not install application source.
+[Download ECNL Solver V2 for Windows (portable x86_64 EXE)](https://github.com/samperez10/ecnl-v2-solver/releases/latest/download/ECNLSolver-Portable-x86_64.exe)
+
+It is a single portable executable and does not install application source. The link always downloads the latest published version.
 
 ## Integrity
 
