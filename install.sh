@@ -11,13 +11,14 @@ elif [ -r /etc/alpine-release ]; then
   case "$ARCH" in x86_64|aarch64) ;; *) echo "No Alpine release is available for $ARCH." >&2; exit 1 ;; esac
 elif [ -r /etc/os-release ]; then
   . /etc/os-release
-  [ "${ID:-}" = ubuntu ] || { echo "This installer supports Ubuntu, Alpine, and Termux." >&2; exit 1; }
-  case "${VERSION_ID:-}:$(dpkg --print-architecture)" in
-    22.04:amd64) PLATFORM=ubuntu-22.04; ARCH=x86_64 ;;
-    22.04:arm64) PLATFORM=ubuntu-22.04; ARCH=aarch64 ;;
-    22.04:armhf) PLATFORM=ubuntu-22.04; ARCH=armhf ;;
-    24.04:amd64) PLATFORM=ubuntu-24.04; ARCH=x86_64 ;;
-    *) echo "No ECNL Solver V2 release is available for Ubuntu ${VERSION_ID:-unknown} $(dpkg --print-architecture)." >&2; exit 1 ;;
+  case "${ID:-}:${VERSION_ID:-}:$(dpkg --print-architecture)" in
+    ubuntu:22.04:amd64) PLATFORM=ubuntu-22.04; ARCH=x86_64 ;;
+    ubuntu:22.04:arm64) PLATFORM=ubuntu-22.04; ARCH=aarch64 ;;
+    ubuntu:22.04:armhf) PLATFORM=ubuntu-22.04; ARCH=armhf ;;
+    ubuntu:24.04:amd64) PLATFORM=ubuntu-24.04; ARCH=x86_64 ;;
+    ubuntu:26.04:amd64) PLATFORM=ubuntu-26.04; ARCH=x86_64 ;;
+    debian:13:amd64) PLATFORM=debian-13; ARCH=x86_64 ;;
+    *) echo "No ECNL Solver V2 release is available for ${PRETTY_NAME:-${ID:-unknown}} $(dpkg --print-architecture)." >&2; exit 1 ;;
   esac
 else
   echo "Unsupported platform. Windows users should download ECNLSolver-Portable-x86_64.exe." >&2

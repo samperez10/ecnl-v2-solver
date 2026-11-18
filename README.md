@@ -2,7 +2,7 @@
 
 Source-free installers and release binaries for ECNL Solver V2.
 
-## Ubuntu, Alpine, and Termux
+## Debian, Ubuntu, Alpine, and Termux
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/samperez10/ecnl-v2-solver/main/install.sh | sh
@@ -18,8 +18,10 @@ The installer also provides `ecnl-solver-v2` as a compatibility alias.
 
 Supported packages:
 
+- Debian 13 (Trixie): x86_64
 - Ubuntu 22.04: x86_64, aarch64, and armhf (including Orange Pi)
 - Ubuntu 24.04: x86_64
+- Ubuntu 26.04: x86_64
 - Alpine 3.23: x86_64 and aarch64
 - Termux: aarch64
 
